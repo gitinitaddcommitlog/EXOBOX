@@ -12,10 +12,11 @@
         }
         
         body {
-            font-family: 'Arial', sans-serif;
-            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1f2b 0%, #2c3e50 100%);
             min-height: 100vh;
             padding: 40px 20px;
+            color: white;
         }
         
         .container {
@@ -26,13 +27,24 @@
         .header {
             text-align: center;
             margin-bottom: 50px;
-            color: white;
         }
         
         .header h1 {
-            font-size: 3rem;
-            margin-bottom: 10px;
+            font-size: 3.5rem;
+            margin-bottom: 15px;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            background: linear-gradient(to right, #e6d78c, #d4af37);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 800;
+        }
+        
+        .header p {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
         }
         
         .products-grid {
@@ -44,25 +56,25 @@
         
         .product-card {
             background: transparent;
-            border-radius: 15px;
+            border-radius: 20px;
             padding: 0;
             text-align: center;
-            transition: transform 0.3s ease;
+            transition: all 0.4s ease;
             text-decoration: none;
             color: white;
             display: flex;
             flex-direction: column;
-            border: 2px solid rgba(255, 255, 255, 0.2);
+            border: none;
             backdrop-filter: blur(10px);
-            height: 500px;
+            height: 520px;
             position: relative;
             overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
         
         .product-card:hover {
-            transform: translateY(-10px);
-            border-color: rgba(255, 255, 255, 0.4);
-            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-15px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
         }
         
         .product-image-container {
@@ -70,7 +82,9 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 20px;
+            padding: 25px;
+            position: relative;
+            overflow: hidden;
         }
         
         .product-image {
@@ -78,6 +92,13 @@
             height: 100%;
             object-fit: contain;
             border-radius: 10px;
+            transition: transform 0.5s ease;
+            z-index: 2;
+            position: relative;
+        }
+        
+        .product-card:hover .product-image {
+            transform: scale(1.05);
         }
         
         .product-content {
@@ -86,40 +107,152 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            padding: 30px 20px;
-            background: rgba(0, 0, 0, 0.6);
+            padding: 30px 25px;
+            position: relative;
+            z-index: 2;
         }
         
         .product-card h2 {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             margin-bottom: 15px;
             color: white;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            font-weight: 700;
         }
         
         .product-card p {
             color: rgba(255, 255, 255, 0.9);
             line-height: 1.6;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             text-align: center;
             text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+            font-size: 1.05rem;
         }
         
         .btn {
             display: inline-block;
-            background: rgba(255, 255, 255, 0.2);
             color: white;
-            padding: 12px 30px;
-            border-radius: 25px;
+            padding: 14px 35px;
+            border-radius: 30px;
             text-decoration: none;
             font-weight: bold;
             transition: all 0.3s ease;
-            border: 1px solid rgba(255, 255, 255, 0.3);
+            border: none;
+            font-size: 1.05rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            position: relative;
+            z-index: 2;
         }
         
         .btn:hover {
-            background: rgba(255, 255, 255, 0.3);
-            border-color: rgba(255, 255, 255, 0.5);
+            transform: translateY(-3px);
+            box-shadow: 0 7px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Dark Beauty Body Butter Colors */
+        .product-card[href="dark-beauty-butter/"] {
+            background: linear-gradient(145deg, #2c4d3a 0%, #1a3527 100%);
+        }
+        
+        .product-card[href="dark-beauty-butter/"] .product-image-container {
+            background: linear-gradient(145deg, #2c4d3a 0%, #3a6b50 100%);
+        }
+        
+        .product-card[href="dark-beauty-butter/"] .product-content {
+            background: linear-gradient(to bottom, #2c4d3a 0%, #1e3628 100%);
+        }
+        
+        .product-card[href="dark-beauty-butter/"] .btn {
+            background: linear-gradient(to right, #eee8b7 0%, #d9d194 100%);
+            color: #2c4d3a;
+        }
+        
+        .product-card[href="dark-beauty-butter/"] .btn:hover {
+            background: linear-gradient(to right, #f5f0c5 0%, #e2dcab 100%);
+        }
+        
+        /* Dark Beauty Hair Food Colors */
+        .product-card[href="dark-beauty-hair-food/"] {
+            background: linear-gradient(145deg, #004c00 0%, #003300 100%);
+        }
+        
+        .product-card[href="dark-beauty-hair-food/"] .product-image-container {
+            background: linear-gradient(145deg, #004c00 0%, #006600 100%);
+        }
+        
+        .product-card[href="dark-beauty-hair-food/"] .product-content {
+            background: linear-gradient(to bottom, #004c00 0%, #002b00 100%);
+        }
+        
+        .product-card[href="dark-beauty-hair-food/"] .btn {
+            background: linear-gradient(to right, #ecbb22 0%, #d4a61c 100%);
+            color: #004c00;
+        }
+        
+        .product-card[href="dark-beauty-hair-food/"] .btn:hover {
+            background: linear-gradient(to right, #f5c634 0%, #ddb024 100%);
+        }
+        
+        /* Dark Beauty Oil Colors */
+        .product-card[href="dark-beauty-oil/"] {
+            background: linear-gradient(145deg, #212316 0%, #17190f 100%);
+        }
+        
+        .product-card[href="dark-beauty-oil/"] .product-image-container {
+            background: linear-gradient(145deg, #212316 0%, #323421 100%);
+        }
+        
+        .product-card[href="dark-beauty-oil/"] .product-content {
+            background: linear-gradient(to bottom, #212316 0%, #15160e 100%);
+        }
+        
+        .product-card[href="dark-beauty-oil/"] .btn {
+            background: linear-gradient(to right, #fcfc80 0%, #e6e673 100%);
+            color: #212316;
+        }
+        
+        .product-card[href="dark-beauty-oil/"] .btn:hover {
+            background: linear-gradient(to right, #ffff99 0%, #efef85 100%);
+        }
+        
+        /* Decorative elements */
+        .product-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            z-index: 3;
+        }
+        
+        .product-card[href="dark-beauty-butter/"]::before {
+            background: linear-gradient(to right, #2c4d3a, #eee8b7);
+        }
+        
+        .product-card[href="dark-beauty-hair-food/"]::before {
+            background: linear-gradient(to right, #004c00, #ecbb22);
+        }
+        
+        .product-card[href="dark-beauty-oil/"]::before {
+            background: linear-gradient(to right, #212316, #fcfc80);
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .products-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+            
+            .product-card {
+                height: 480px;
+            }
         }
     </style>
 </head>
@@ -127,7 +260,7 @@
     <div class="container">
         <div class="header">
             <h1>Dark Beauty Products</h1>
-            <p>Explore our products in immersive 3D</p>
+            <p>Discover our premium collection of organic beauty products, each crafted with natural ingredients for radiant skin and healthy hair.</p>
         </div>
         
         <div class="products-grid">
@@ -137,7 +270,7 @@
                 </div>
                 <div class="product-content">
                     <h2>Dark Beauty Body Butter</h2>
-                    <p>Rich, nourishing formula for silky smooth skin</p>
+                    <p>Nourishing With Shea, Coconut & Eucalyptus oil<br>Deep moisture - Soft Glow - All-Day Comfort</p>
                     <div class="btn">View in 3D</div>
                 </div>
             </a>
@@ -148,18 +281,18 @@
                 </div>
                 <div class="product-content">
                     <h2>Dark Beauty Hair Food</h2>
-                    <p>Nourishing hair care for healthy, beautiful hair</p>
+                    <p>Enriched with Shea butter, Coconut oil, Castor oil, Olive oil, and other organic ingredients. Contains Peppermint. TRIPLE ACTION.</p>
                     <div class="btn">View in 3D</div>
                 </div>
             </a>
             
             <a href="dark-beauty-oil/" class="product-card">
                 <div class="product-image-container">
-                    <img src="DarkBeautyOil.png" alt="Dark Beauty Oil" class="product-image">
+                    <img src="DarkBeautyOil.png" alt="Dark Beauty Scalp Treatment Oil" class="product-image">
                 </div>
                 <div class="product-content">
-                    <h2>Dark Beauty Oil</h2>
-                    <p>Premium beauty oil for radiant skin</p>
+                    <h2>Dark Beauty Scalp Treatment Oil</h2>
+                    <p>Nourishing Organic Oils for Scalp and Hair health</p>
                     <div class="btn">View in 3D</div>
                 </div>
             </a>
