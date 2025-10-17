@@ -43,61 +43,83 @@
         }
         
         .product-card {
-            background: white;
+            background: transparent;
             border-radius: 15px;
-            padding: 30px;
+            padding: 0;
             text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: transform 0.3s ease;
             text-decoration: none;
-            color: #333;
+            color: white;
             display: flex;
             flex-direction: column;
-            align-items: center;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            height: 500px;
+            position: relative;
+            overflow: hidden;
         }
         
         .product-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            border-color: rgba(255, 255, 255, 0.4);
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .product-image-container {
+            height: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
         }
         
         .product-image {
-            width: 150px;
-            height: 150px;
+            width: 100%;
+            height: 100%;
             object-fit: contain;
-            margin-bottom: 20px;
             border-radius: 10px;
-            background: #f8f9fa;
-            padding: 15px;
+        }
+        
+        .product-content {
+            height: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 30px 20px;
+            background: rgba(0, 0, 0, 0.6);
         }
         
         .product-card h2 {
             font-size: 1.5rem;
-            margin-bottom: 10px;
-            color: #2c3e50;
+            margin-bottom: 15px;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
         
         .product-card p {
-            color: #666;
+            color: rgba(255, 255, 255, 0.9);
             line-height: 1.6;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             text-align: center;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
         }
         
         .btn {
             display: inline-block;
-            background: #3498db;
+            background: rgba(255, 255, 255, 0.2);
             color: white;
             padding: 12px 30px;
             border-radius: 25px;
             text-decoration: none;
-            margin-top: auto;
             font-weight: bold;
-            transition: background 0.3s ease;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
         
         .btn:hover {
-            background: #2980b9;
+            background: rgba(255, 255, 255, 0.3);
+            border-color: rgba(255, 255, 255, 0.5);
         }
     </style>
 </head>
@@ -110,24 +132,36 @@
         
         <div class="products-grid">
             <a href="dark-beauty-butter/" class="product-card">
-                <img src="DarkBodyButter.png" alt="Dark Beauty Body Butter" class="product-image">
-                <h2>Dark Beauty Body Butter</h2>
-                <p>Rich, nourishing formula for silky smooth skin</p>
-                <div class="btn">View in 3D</div>
+                <div class="product-image-container">
+                    <img src="DarkBodyButter.png" alt="Dark Beauty Body Butter" class="product-image">
+                </div>
+                <div class="product-content">
+                    <h2>Dark Beauty Body Butter</h2>
+                    <p>Rich, nourishing formula for silky smooth skin</p>
+                    <div class="btn">View in 3D</div>
+                </div>
             </a>
             
             <a href="dark-beauty-hair-food/" class="product-card">
-                <img src="DarkBeautyHairFood.png" alt="Dark Beauty Hair Food" class="product-image">
-                <h2>Dark Beauty Hair Food</h2>
-                <p>Nourishing hair care for healthy, beautiful hair</p>
-                <div class="btn">View in 3D</div>
+                <div class="product-image-container">
+                    <img src="DarkBeautyHairFood.png" alt="Dark Beauty Hair Food" class="product-image">
+                </div>
+                <div class="product-content">
+                    <h2>Dark Beauty Hair Food</h2>
+                    <p>Nourishing hair care for healthy, beautiful hair</p>
+                    <div class="btn">View in 3D</div>
+                </div>
             </a>
             
             <a href="dark-beauty-oil/" class="product-card">
-                <img src="DarkBeautyOil.png" alt="Dark Beauty Oil" class="product-image">
-                <h2>Dark Beauty Oil</h2>
-                <p>Premium beauty oil for radiant skin</p>
-                <div class="btn">View in 3D</div>
+                <div class="product-image-container">
+                    <img src="DarkBeautyOil.png" alt="Dark Beauty Oil" class="product-image">
+                </div>
+                <div class="product-content">
+                    <h2>Dark Beauty Oil</h2>
+                    <p>Premium beauty oil for radiant skin</p>
+                    <div class="btn">View in 3D</div>
+                </div>
             </a>
         </div>
     </div>
